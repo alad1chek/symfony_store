@@ -1,0 +1,50 @@
+<?php
+
+namespace Neklesa\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Discount
+ *
+ * @ORM\Table(name="discount", indexes={@ORM\Index(name="product_id", columns={"product_id"})})
+ * @ORM\Entity
+ */
+class Discount
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="count", type="integer", nullable=false)
+     */
+    private $count;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="coeff", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $coeff;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Neklesa\StoreBundle\Entity\Product
+     *
+     * @ORM\ManyToOne(targetEntity="Neklesa\StoreBundle\Entity\Product")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="id")
+     * })
+     */
+    private $product;
+
+
+}
+

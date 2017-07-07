@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-lg-4">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {% if not perentCategory %}
+                    <h3>Категории</h3>
+                    {% else %}
+                    <h3>{{ perentCategory.name }}</h3>
+                    {% endif %}
+                </div>
+                <ul>
+                    {% for category in categorys %}
+                        <li>
+                            <a href="{{ path('neklesa_store_list', {'id' : category.id}) }}">
+                                <h4>{{ category.name }}</h4>
+
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+            
+        </div>
+        <div class="col-lg-8">
+            {% if not products %}
+                <h2>Товаров не обнаружено</h2>
+            {% else %}
+                {% for product in products  %}
+                    <div class="row">
+                        <div class="col-lg-8"><a href="{{ path('neklesa_store_product',{'id' : product.id}) }}">
+                                <h4>{{ product.name }}</h4>
+                            </a></div>
+                        <div class="col-lg-4"><a href="{{ path('neklesa_store_product',{'id' : product.id}) }}">
+                                <h4>{{ product.price }}</h4>
+                            </a></div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-3 col-lg-offset-2"><h1>Продукт</h1></div>
+        <div class="col-lg-1">
+            <h1>
+            {{ form_start(delete_form) }}
+            <input class="btn btn-danger" type="submit" value="Удалить">
+            {{ form_end(delete_form) }}
+            </h1>
+        </div>
+        <div class="col-lg-6"><h1>Картинки <a href="{{ path('crud-image_new') }}" class="glyphicon glyphicon-plus"></a></h1></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-2">
+            <div class="panel panel-success">
+                <div class="row">
+                    <div class="btn-group btn-group-justified">
+                        <a class="btn btn-success" href="{{ path('crud-product_index') }}">К списку</a>
+                        <a class="btn btn-success" href="{{ path('crud-product_edit', { 'id': product.id }) }}">Изменить</a>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <div class="row">
+                        <h2 style="padding-left: 15px" class="panel-title">{{ product.name }}</h2>
+                    </div>
+
+
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-4">ID </div>
+                        <div class="col-lg-8">{{ product.id }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">Цена </div>
+                        <div class="col-lg-8">{{ product.price }}</div>
+                    </div>
+                    <div class="row">
+                        <h4 style="padding-left: 15px">Категории <a class="glyphicon glyphicon-plus" href="{{ path('crud-categorylink_new') }}"></a></h4>
+                        <ul>
+                        {% for category in categorys %}
+                            <li>{{ category.name }}
+                                <a class="glyphicon glyphicon-pencil" href="{{ path('crud-categorylink_edit',{'id': category.id}) }}"></a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            {% for image in images %}
+                <div class="thumbnail">
+                    <img src="/assets/image/pruduct_image/{{ image.url }}" alt="...">
+                    <div class="caption">
+
+                        <p><a href="{{ path('crud-image_show', { 'id': image.id }) }}" class="btn btn-primary" >Подробнее</a></p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+{% endblock %}

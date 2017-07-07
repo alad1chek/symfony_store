@@ -1,0 +1,4 @@
+services:
+#    neklesa_store.example:
+#        class: Neklesa\StoreBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

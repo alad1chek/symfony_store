@@ -1,0 +1,4 @@
+neklesa_api_product:
+  type: rest
+  resource: "@NeklesaApiBundle/Controller/ProductController.php"
+  prefix: /v1

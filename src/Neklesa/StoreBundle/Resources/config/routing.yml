@@ -1,0 +1,38 @@
+neklesa_store_crud-product:
+    resource: "@NeklesaStoreBundle/Resources/config/routing/product.yml"
+    prefix:   /crud-product
+
+neklesa_store_crud-category:
+    resource: "@NeklesaStoreBundle/Resources/config/routing/category.yml"
+    prefix:   /crud-category
+
+neklesa_store_crud-image:
+    resource: "@NeklesaStoreBundle/Resources/config/routing/image.yml"
+    prefix:   /crud-image
+
+neklesa_store_crud-categorylink:
+        resource: "@NeklesaStoreBundle/Resources/config/routing/categorylink.yml"
+        prefix:   /crud-categorylink
+
+
+neklesa_store_homepage:
+    path:     /
+    defaults: { _controller: NeklesaStoreBundle:Default:index }
+
+neklesa_store_list:
+    path:     /list/{id}
+    defaults: { _controller: NeklesaStoreBundle:Default:list, id: 0 }
+    requirements:
+        id: '\d+'
+
+neklesa_store_product:
+    path:     /product/{id}
+    defaults: { _controller: NeklesaStoreBundle:Default:product, id: 0 }
+    requirements:
+        id: '\d+'
+
+neklesa_store_crud:
+    path:     /crud
+    defaults: { _controller: NeklesaStoreBundle:Default:crud }
+
+

@@ -1,0 +1,14 @@
+neklesa_api:
+    type: rest
+    resource: '@NeklesaApiBundle/Resources/config/routing.yml'
+    prefix:   /api
+    #    resource: "@NeklesaApiBundle/Controller/ProductController.php"
+#что то тут есть
+neklesa_store:
+    resource: "@NeklesaStoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+#app:
+#    resource: '@AppBundle/Controller/'
+#    type: annotation
+

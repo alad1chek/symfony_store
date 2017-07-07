@@ -1,0 +1,24 @@
+crud-image_index:
+    path:     /
+    defaults: { _controller: "NeklesaStoreBundle:Image:index" }
+    methods:  GET
+
+crud-image_show:
+    path:     /{id}/show
+    defaults: { _controller: "NeklesaStoreBundle:Image:show" }
+    methods:  GET
+
+crud-image_new:
+    path:     /new
+    defaults: { _controller: "NeklesaStoreBundle:Image:new" }
+    methods:  [GET, POST]
+
+crud-image_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "NeklesaStoreBundle:Image:edit" }
+    methods:  [GET, POST]
+
+crud-image_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "NeklesaStoreBundle:Image:delete" }
+    methods:  DELETE

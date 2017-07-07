@@ -1,0 +1,24 @@
+crud-categocy_index:
+    path:     /
+    defaults: { _controller: "NeklesaStoreBundle:Category:index" }
+    methods:  GET
+
+crud-categocy_show:
+    path:     /{id}/show
+    defaults: { _controller: "NeklesaStoreBundle:Category:show" }
+    methods:  GET
+
+crud-categocy_new:
+    path:     /new
+    defaults: { _controller: "NeklesaStoreBundle:Category:new" }
+    methods:  [GET, POST]
+
+crud-categocy_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "NeklesaStoreBundle:Category:edit" }
+    methods:  [GET, POST]
+
+crud-categocy_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "NeklesaStoreBundle:Category:delete" }
+    methods:  DELETE

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Categorylinks list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorylink in categorylinks %}
+            <tr>
+                <td><a href="{{ path('crud-categorylink_show', { 'id': categorylink.id }) }}">{{ categorylink.id }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('crud-categorylink_show', { 'id': categorylink.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('crud-categorylink_edit', { 'id': categorylink.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('crud-categorylink_new') }}">Create a new categorylink</a>
+        </li>
+    </ul>
+{% endblock %}

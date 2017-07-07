@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-1"><h4><a class="glyphicon glyphicon-arrow-left" href="{{ path('crud-product_index') }}"></a></h4></div>
+                        <div class="col-lg-9"><h4> Редактирование </h4></div>
+                        <div class="col-lg-2"><h4>{{ form_start(delete_form) }}
+                                <input class="" type="submit" value="Delete">
+                                {{ form_end(delete_form) }}</h4></div>
+                    </div>
+
+                </div>
+                <div class="panel-body">
+                    {{ form_start(edit_form) }}
+                    {{ form_widget(edit_form) }}
+                    <input class="btn" type="submit" value="Edit" />
+                    {{ form_end(edit_form) }}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

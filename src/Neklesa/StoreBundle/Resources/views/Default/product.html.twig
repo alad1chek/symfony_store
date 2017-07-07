@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% set page_title = product.name %}
+{% block body %}
+   <div class="row">
+      <h1>{{ product.name }}</h1>
+      <div class="col-lg-5">
+         {% for image in images %}
+            <div class="thumbnail">
+               <img src="/assets/image/pruduct_image/{{ image.url }}" alt="...">
+
+            </div>
+         {% endfor %}
+      </div>
+      <div class="col-lg-7">
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h3>Описание</h3>
+            </div>
+            <div class="panel-body">
+               <h4>Категории</h4>
+               <ul>
+                  {% for category in categorys %}
+                     <li>{{ category.name }}</li>
+                  {% endfor %}
+               </ul>
+            </div>
+            <div class="panel-footer">{{ product.price }}грн/кг</div>
+         </div>
+      </div>
+   </div>
+{% endblock %}
+
